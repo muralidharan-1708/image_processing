@@ -17,6 +17,9 @@ def render_page_to_gpu(pdf_path, page_number):
         pix = page.get_pixmap(alpha=False)  # Render without transparency
         raw_image = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)  # (H, W, C)
 
+        # Make a writable copy of the array
+        raw_image = np.copy(raw_image)
+
         # Move image data to GPU
         tensor_image = torch.from_numpy(raw_image).permute(2, 0, 1).to('cuda')  # (C, H, W)
 
