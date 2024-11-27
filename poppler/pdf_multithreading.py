@@ -14,7 +14,7 @@ def render_page(args):
 
 if __name__ == "__main__":
     starttime = time.time()
-    pdf_path =r"C:\Users\MuraliDharan S\OneDrive\Desktop\image_processing\image_processing\poppler\OCR_extraction.pdf"
+    pdf_path =r"C:\Users\MuraliDharan S\OneDrive\Desktop\Iterations-codility.pdf"
     poppler_path = r"D:\Program Files\poppler-24.08.0\Library\bin"
     
     total_pages = len(convert_from_path(pdf_path, poppler_path=poppler_path))
